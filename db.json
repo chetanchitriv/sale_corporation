@@ -1,0 +1,117 @@
+{
+  "products": [
+    {
+      "image": "1.jpg",
+      "productname": "atlas",
+      "cat": "1",
+      "description": "hdjfgbksdhfkdshfksdhkfhsdkjhkihkh",
+      "modelno": "001",
+      "color": "red",
+      "price": "$160",
+      "id": 11
+    },
+    {
+      "image": "2.jpg",
+      "productname": "POS System",
+      "cat": "3",
+      "description": "sadfsad",
+      "modelno": "54",
+      "color": "black",
+      "price": "Rs. 12",
+      "id": 12
+    },
+    {
+      "image": "",
+      "productname": "Barcode Scanner",
+      "cat": "2",
+      "description": "dasdsa",
+      "modelno": "sadsadsa",
+      "color": "sadasd",
+      "price": "123",
+      "id": 13
+    },
+    {
+      "image": "",
+      "productname": "dsfsd",
+      "cat": "2",
+      "description": "fsdfsd",
+      "modelno": "dsfsd",
+      "color": "fdsfds",
+      "price": "",
+      "id": 14
+    },
+    {
+      "image": "",
+      "productname": "gdf",
+      "cat": "CCTV Camera",
+      "description": "gd",
+      "modelno": "gdf",
+      "color": "gdf",
+      "price": "gfdfd",
+      "id": 15
+    },
+    {
+      "image": "",
+      "productname": "gdf",
+      "cat": "CCTV Camera",
+      "description": "gd",
+      "modelno": "gdf",
+      "color": "gdf",
+      "price": "gfdfd",
+      "id": 16
+    },
+    {
+      "image": "",
+      "productname": "hjg",
+      "cat": "Barcode & QR Reader",
+      "description": "jhjgh",
+      "modelno": "ghjgh",
+      "color": "gjhhg",
+      "price": "ghjghjgh",
+      "id": 17
+    },
+    {
+      "image": "",
+      "productname": "gdfgdfgd",
+      "cat": "Barcode & QR Reader",
+      "description": "dgfgdf",
+      "modelno": "gdfddf",
+      "color": "gddfgdf",
+      "price": "12300",
+      "id": 18
+    },
+    {
+      "image": "C:\\fakepath\\OIP.jfif",
+      "productname": "",
+      "cat": "",
+      "description": "",
+      "modelno": "",
+      "color": "",
+      "price": "",
+      "id": 19
+    },
+    {
+      "image": "C:\\fakepath\\3.jpg",
+      "productname": "",
+      "cat": "",
+      "description": "",
+      "modelno": "",
+      "color": "",
+      "price": "",
+      "id": 20
+    },
+    {
+      "id": 21
+    },
+    {
+      "id": 22
+    }
+  ],
+  "login": [
+    {
+      "email": "sahil@1234",
+      "pass": "sahil1234",
+      "token": "asdfghh"
+    }
+  ]
+}

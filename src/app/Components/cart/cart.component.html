@@ -1,0 +1,44 @@
+<ng-container *ngIf="cartList.length !=0">
+    <div class="card-table">
+        <div class="card-product" style="margin-left: -25px;margin-right: 67px;">
+            <table class="table table-responsive" style="margin-left: 40px;">
+                <thead>
+                    <th>Sr.No.</th>
+                    <th>Product Name</th>
+                    <th>Product Image</th>
+
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </thead>
+                <tbody *ngFor="let item of cartList ; let i = index  ">
+                    <tr>
+                        <td>{{i+1}}</td>
+                        <td>{{item.productname}}</td>
+                        <td>{{item.image}}</td>
+                        <td>{{item.price}}</td>
+                        <td>{{item.quantity}}</td>
+                        <td>{{item.Toatal}}</td>
+
+                        <td><button (click)="remove(item)" class="btn " style="background-color:#396f3c ; color: white;border-radius: 5px;"><b>Delet</b></button>
+                            <button class="btn  " style="background-color:#396f3c ; color: white;border-radius: 5px;margin-left: 10px;"><b>Buy Now</b></button></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div><br>
+    <button (click)=" emptycart()" class="add-to-cart-btn" style="margin-left: 80%;width: 130px; height: 40px;border-radius: 15px;background-color: #D10024;color: white ;"> <b>Clear Cart</b></button>
+</ng-container>
+<ng-container *ngIf="cartList.length == 0">
+    <div class="container ">
+        <div class=>
+            <img style="width: 30%;height:20%;margin-left: 35%;" src="./assets/img/eee.png" alt="" srcset="">
+            <h3 style="margin-left: 37%;    color: gray;">your cart is Empty</h3>
+            <h3 style="margin-left: 40%;    color: gray;">Add item to it</h3>
+            <a routerLink="/ecom/shop"> <button class="btn" style="margin-left: 43%;background-color:#396f3c;color: aliceblue;"><b>Shop Now</b></button></a>
+
+        </div>
+    </div>
+</ng-container>

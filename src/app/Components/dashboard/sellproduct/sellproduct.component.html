@@ -1,0 +1,24 @@
+<div style="align-items: center; margin-left: 30%;">
+    <h1>Sell Your Product Here </h1><br><br> <br>
+    <form [formGroup]="sellForm">
+        <input class="i" formControlName="image" class="input" type="file" (change)="onfileselect($event)" placeholder="Add product Image">
+        <br><br><br>
+        <input class="i" formControlName="productname" type="text" class="input" placeholder="Product Name"><br><br><br>
+        <select class="i" formControlName="cat" class="input-select">
+            <option value="0">Select Categories</option>
+
+            <option value="Barcode & QR Reader">Barcode & QR Reader</option>
+            <option value="CCTV Camera">CCTV Camera</option>
+            <option value="EAS System">EAS System</option>
+            <option value="Entrance Automation">Entrance Automation</option>
+            <option value="Pos System">Pos System</option>
+
+        </select><br><br><br>
+        <input class="i" formControlName="description" class="input" placeholder="Description"><br><br><br>
+        <input class="i" formControlName="modelno" class="input" placeholder="Model No."><br><br><br>
+        <input class="i" class="input" placeholder="Color" formControlName="color"><br><br><br>
+        <input class="i" class="input" placeholder="price" formControlName="price"><br><br><br>
+        <button class="btn bg-danger " (click)="sell()" style="background-color:#555555 ; color: white;border-radius: 5px;margin-left: 19%;"><b>Sell
+                    Product</b></button>
+    </form>
+</div>

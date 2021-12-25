@@ -1,0 +1,57 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { CartComponent } from './Components/cart/cart.component';
+import { ContactusComponent } from './Components/contactus/contactus.component';
+import { FooterComponent } from './Components/footer/footer.component';
+import { HomeComponent } from './Components/home/home.component';
+import { HotdealsComponent } from './Components/hotdeals/hotdeals.component';
+import { LoginComponent } from './Components/login/login.component';
+import { ShopComponent } from './Components/shop/shop.component';
+import { SidenavComponent } from './Components/sidenav/sidenav.component';
+import { ViewproductComponent } from './Components/viewproduct/viewproduct.component';
+import { WhishlistComponent } from './Components/whishlist/whishlist.component';
+import { AboutComponent } from './Components/about/about.component';
+import { SellproductComponent } from './Components/dashboard/sellproduct/sellproduct.component';
+import { AdminComponent } from './Components/admin/admin.component';
+import { AdminsellComponent } from './Components/adminsell/adminsell.component';
+import { MainComponent } from './Components/dashboard/main/main.component';
+import { EcommerceComponent } from './ecommerce/ecommerce.component';
+
+
+
+const routes: Routes = [
+    {
+        path: '',
+        redirectTo: '/ecom/home',
+        pathMatch: 'full',
+    },
+    {path:"ecom",component:EcommerceComponent,
+    children:[
+    { path: "deal", component: HotdealsComponent },
+    { path: "view", component: ViewproductComponent },
+    { path: "cart", component: CartComponent },
+    { path: "footer", component: FooterComponent },
+    { path: "home", component: HomeComponent },
+    { path: "shop", component: ShopComponent },
+    { path: "sidenav", component: SidenavComponent },
+    { path: "contactus", component: ContactusComponent },
+    { path: "wishlist", component: WhishlistComponent },
+    { path: "login", component: LoginComponent },
+    { path: "about", component: AboutComponent },
+]},
+    {path:"admin",component:AdminComponent},
+    {path:"adminsell",component:AdminsellComponent},
+    {path:"main",component:MainComponent,
+     children:[
+        { path: "sell", component: SellproductComponent },
+     ]}
+   
+
+];
+
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule {}
