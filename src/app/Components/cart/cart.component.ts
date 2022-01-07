@@ -26,7 +26,9 @@ export class CartComponent implements OnInit {
   
     }
     get(){
+      //  var token = localStorage.getItem("token")
       this.cart.getProductList().subscribe((res:any)=>{
+
         console.log(res)
         this.cartList=res;
         this.grandTotal = this.cart.getTotalPrice()

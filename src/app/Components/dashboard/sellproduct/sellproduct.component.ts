@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators,} from '@angular/forms';
 import { FormBuilder} from '@angular/forms'
+import { Router } from '@angular/router';
 import { ProductService } from 'src/app/Services/product.service';
 
 
@@ -16,7 +17,7 @@ export class SellproductComponent implements OnInit {
    // Variable to store shortLink from api response
   
 
-  constructor( private fb:FormBuilder, private service:ProductService, private http:HttpClient) { }
+  constructor( private fb:FormBuilder, private service:ProductService, private http:HttpClient , private router:Router) { }
   
   ngOnInit(): void {
     this.sellForm = this.fb.group({
@@ -55,11 +56,12 @@ export class SellproductComponent implements OnInit {
     fd.append('color',this.sellForm.get('color').value);
     fd.append('price',this.sellForm.get('price').value);
 
-    this.http.post("http://933c-150-129-202-90.ngrok.io/image",fd)
+    this.http.post("http://4bf1-43-224-0-159.ngrok.io/api/addproduct",fd)
     .subscribe( 
         (res) => {
           this.alert=true,
     console.log(res)
+  this.router.navigate(['/ecom/shop'])
    },
   (err)=>{console.log(err)}
 

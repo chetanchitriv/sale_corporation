@@ -1,24 +1,36 @@
-<div style="align-items: center; margin-left: 30%;">
+<div style="align-items: center; margin-left: 10%;">
     <h1>Sell Your Product Here </h1><br><br> <br>
+
+
     <form [formGroup]="sellForm">
-        <input class="i" formControlName="image" class="input" type="file" (change)="onfileselect($event)" placeholder="Add product Image">
-        <br><br><br>
-        <input class="i" formControlName="productname" type="text" class="input" placeholder="Product Name"><br><br><br>
-        <select class="i" formControlName="cat" class="input-select">
-            <option value="0">Select Categories</option>
+        <div class="row">
+            <div class="col-md-5">
+                <input class="i" formControlName="image" class="input" type="file" (change)="onfileselect($event)" placeholder="Add product Image">
+                <br><br><br>
+                <input class="i" formControlName="productname" type="text" class="input" placeholder="Product Name"><br><br><br>
+                <select class="i" formControlName="cat" class="input-select">
+                  <option value="select Categories" >Select Categories</option>
+                  <option value="Furniture">Furniture</option>
+                  <option value="Eclectronics">Eclectronics</option>
+                 
+          
+             </select><br><br><br>
+                <input class="i" formControlName="description" class="input" placeholder="Description"><br><br><br>
+            </div>
+            <div class="col-md-5">
 
-            <option value="Barcode & QR Reader">Barcode & QR Reader</option>
-            <option value="CCTV Camera">CCTV Camera</option>
-            <option value="EAS System">EAS System</option>
-            <option value="Entrance Automation">Entrance Automation</option>
-            <option value="Pos System">Pos System</option>
+                <input class="i" formControlName="modelno" class="input" placeholder="Model No."><br><br><br>
+                <input class="i" class="input" placeholder="Color" formControlName="color"><br><br><br>
+                <input class="i" class="input" placeholder="price" formControlName="price"><br><br><br>
+            </div>
+        </div>
+        <button class="btn bg-danger " (click)="sell()" style="background-color:#555555 ; color: white;border-radius: 5px;"><b>Sell
+                        Product</b></button>
 
-        </select><br><br><br>
-        <input class="i" formControlName="description" class="input" placeholder="Description"><br><br><br>
-        <input class="i" formControlName="modelno" class="input" placeholder="Model No."><br><br><br>
-        <input class="i" class="input" placeholder="Color" formControlName="color"><br><br><br>
-        <input class="i" class="input" placeholder="price" formControlName="price"><br><br><br>
-        <button class="btn bg-danger " (click)="sell()" style="background-color:#555555 ; color: white;border-radius: 5px;margin-left: 19%;"><b>Sell
-                    Product</b></button>
     </form>
+
+
+
+
 </div>
+<P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestias ipsum necessitatibus laboriosam ratione mollitia voluptates aliquid iste praesentium nam facere, a quod numquam neque nisi quae odit. Quam, perferendis?</P>

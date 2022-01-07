@@ -24,6 +24,8 @@ import { TopnavComponent } from './Components/dashboard/topnav/topnav.component'
 import { MainComponent } from './Components/dashboard/main/main.component';
 import { VerticalnavComponent } from './Components/dashboard/verticalnav/verticalnav.component';
 import { EcommerceComponent } from './ecommerce/ecommerce.component';
+import { SignupComponent } from './Components/signup/signup.component';
+import { ViewusersComponent } from './Components/dashboard/viewusers/viewusers.component';
 
 
 
@@ -51,6 +53,8 @@ import { EcommerceComponent } from './ecommerce/ecommerce.component';
     MainComponent,
     VerticalnavComponent,
     EcommerceComponent,
+    SignupComponent,
+    ViewusersComponent,
 
     
      

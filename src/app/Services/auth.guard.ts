@@ -11,19 +11,19 @@ export class AuthGuard implements CanActivate {
 
   check:any
   constructor(private ser:ProductService , private router:Router){}
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot):
-    boolean {
-      if (this.ser.isLoggedIn()
-       ) {
-       
+  canActivate()
+     {
+      if (this.ser.isAdminLoggedIn()) 
+      {
         return true
+       
       }
      else{
-       
-       this.router.navigate(['main']);
-       return false
+       alert("Jada Hushyari Karra Kya")
+   this.router.navigate(['/login'])
+   return false
+      
+
      }
     }
 } 

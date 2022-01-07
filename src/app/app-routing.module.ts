@@ -17,6 +17,9 @@ import { AdminComponent } from './Components/admin/admin.component';
 import { AdminsellComponent } from './Components/adminsell/adminsell.component';
 import { MainComponent } from './Components/dashboard/main/main.component';
 import { EcommerceComponent } from './ecommerce/ecommerce.component';
+import { SignupComponent } from './Components/signup/signup.component';
+import { AuthGuard } from './Services/auth.guard';
+import { ViewusersComponent } from './Components/dashboard/viewusers/viewusers.component';
 
 
 
@@ -26,10 +29,13 @@ const routes: Routes = [
         redirectTo: '/ecom/home',
         pathMatch: 'full',
     },
+    { path: "login", component: LoginComponent },
+    { path: "signup", component: SignupComponent },
+
     {path:"ecom",component:EcommerceComponent,
     children:[
     { path: "deal", component: HotdealsComponent },
-    { path: "view", component: ViewproductComponent },
+    { path: "view/:id", component: ViewproductComponent },
     { path: "cart", component: CartComponent },
     { path: "footer", component: FooterComponent },
     { path: "home", component: HomeComponent },
@@ -37,14 +43,14 @@ const routes: Routes = [
     { path: "sidenav", component: SidenavComponent },
     { path: "contactus", component: ContactusComponent },
     { path: "wishlist", component: WhishlistComponent },
-    { path: "login", component: LoginComponent },
     { path: "about", component: AboutComponent },
-]},
+    ]},
     {path:"admin",component:AdminComponent},
     {path:"adminsell",component:AdminsellComponent},
     {path:"main",component:MainComponent,
      children:[
         { path: "sell", component: SellproductComponent },
+        { path: "viewusers", component: ViewusersComponent },
      ]}
    
 

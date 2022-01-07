@@ -7,18 +7,26 @@ import { observable, Observable, of } from 'rxjs';
 })
 export class ProductService {
 
+  apiUrl= "http://4bf1-43-224-0-159.ngrok.io/api/addproduct"
+
   constructor( private http:HttpClient) { }
 
 
 
-  // sellproduct(data:any):Observable<any>{
-  //   return this.http.post("http://localhost:3000/products",data)
-  // }
+  
   getProduct():Observable<any>{
-    return this.http.get(" http://933c-150-129-202-90.ngrok.io/image");
+    return this.http.get("http://4bf1-43-224-0-159.ngrok.io/api/addproduct");
   }
+
+  getcurerntproduct(id:any):Observable<any>{
+    return this.http.get(`${this.apiUrl}/${id}`)
+  }
+
+
+// login and signup start
+
   postlog(name:any ):Observable<any>{
-    return this.http.post("http://b235-43-224-0-201.ngrok.io/login" , name  )
+    return this.http.post("http://4bf1-43-224-0-159.ngrok.io/api/login" , name  )
     // .pipe(
     //   tap(tokens => this.dologinuser(data, tokens)),
     //   mapTo(true),
@@ -28,10 +36,37 @@ export class ProductService {
     
   }
   getlog( ):Observable<any>{
-    return this.http.get("http://b235-43-224-0-201.ngrok.io/login/get"   )
+    return this.http.get("http://4bf1-43-224-0-159.ngrok.io/api/login"   )
     
   }
+  postsignup(name:any ){
+    return this.http.post("http://4bf1-43-224-0-159.ngrok.io/api/signup" , name  )
+  }
+  getsignup( ):Observable<any>{
+    return this.http.get("http://4bf1-43-224-0-159.ngrok.io/login/get")
+    
+  }
+  settoken(token:any){
+    localStorage.setItem("token",token)
+  }
+  isLoggedIn(){
+   return !!localStorage.getItem("token")
+  
+  }
+  setAdmin(role:any){
+    localStorage.setItem("role",role)
+  }
+  isAdminLoggedIn(){
+   return !!localStorage.getItem("role")
+  
+  }
+// login and signup end
 
+//  view users
+getuser():Observable<any>{
 
- 
+  return this.http.get("http://4bf1-43-224-0-159.ngrok.io/api/viewusers")
+  // .pipe(res)
+}
+
 }

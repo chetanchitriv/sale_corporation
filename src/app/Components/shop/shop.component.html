@@ -78,7 +78,7 @@
                             <!-- product -->
                             <div class="product">
                                 <div class="product-img">
-                                    <img [src]="sanitize('data:image/png;base64, ' + _arrayBufferToBase64(product.image.data.data))">
+                                    <img [src]="sanitize('data:image/png;base64, ' + _arrayBufferToBase64(product.image.data.data))" style="height: 219px;">
                                     <div class="p.roduct-label">
                                         <!-- <span class="sale">-30%</span> -->
 
@@ -98,7 +98,7 @@
                                     <div class="product-btns">
                                         <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
                                         <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                        <button class="quick-view"><a routerLink="/ecom/view"><i class="fa fa-eye"></i></a><span class="tooltipp">quick view</span></button>
+                                        <button class="quick-view"><a routerLink="/ecom/view/{{product._id}}"><i class="fa fa-eye"></i></a><span class="tooltipp">quick view</span></button>
                                     </div>
                                 </div>
                                 <div class="add-to-cart">

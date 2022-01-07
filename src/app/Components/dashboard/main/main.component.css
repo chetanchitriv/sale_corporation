@@ -1,0 +1,15 @@
+#b {
+    margin-left: 80%;
+    background-color: #009688;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+#mySidebar {
+    display: none;
+    box-shadow: 0 2px 5px 0 #020202, 0 2px 10px 0 rgb(0 0 0 / 12%);
+    border-bottom: 1px solid black;
+}

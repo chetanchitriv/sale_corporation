@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   password:any
    check:any
    settoken:any
+   user:boolean=false
 
    loginform:any=FormGroup
   constructor(private fb:FormBuilder , private ser:ProductService , private route:Router) { }
@@ -28,20 +29,34 @@ export class LoginComponent implements OnInit {
   login(){
    
     this.ser.postlog(this.loginform.value).subscribe((res:any)=>{
-  console.log(res)
+ 
+  
+  
   //  console.log(res[0].email)
-      if(res.message == 'Successfully Login'){
-
-        alert("Yor are Succesfully Loged In")
-        this.route.navigate(['main'])
-
+      if(res.success){
+          if(res.role){
+            alert("welcome Admin")
+            this.ser.setAdmin(res.role)
+            this.ser.settoken(res.accesstoken)
+            this.route.navigate(['/main'])
+          }else
+          {
+            this.ser.settoken(res.accesstoken)
+            alert("Yor are Succesfully Logged In")
+            this.route.navigate(['/ecom/home'])
+          }
       }
-      else{
-
-        alert("Yor are not  Loged In")
-        this.route.navigate(['login'])
+      // else if( ){
+      //   this.user=true
+       
+      //   alert("Yor are not  Loged In")
+      //   this.route.navigate(['login'])
         
-      }
+      // }
+     
+    },
+    (err:any)=>{
+      this.user=true
     })
    
   }

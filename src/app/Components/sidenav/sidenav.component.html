@@ -4,12 +4,13 @@
         <div class="container">
             <ul class="header-links pull-left">
                 <li><a href="#"><i class="fa fa-phone"></i>093569 69349</a></li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i> info@arsecuritysystem.com</a></li>
-                <li><a href="#"><i class="fa fa-map-marker"></i> Gondia, Maharashtra, India</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i>sankalpsalescorporation5@gmail.com.com</a></li>
+                <li><a href="#"><i class="fa fa-map-marker"></i> Nagpur, Maharashtra</a></li>
             </ul>
             <ul class="header-links pull-right">
-                <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-                <li><a routerLink="login"><i class="fa fa-user-o"></i> My Account</a></li>
+                <li (click)="out()" *ngIf="logout"><a style="color: aliceblue ;cursor: pointer;"><i class="fa fa-sign-out" aria-hidden="true"></i> LogOut</a></li>
+                <li *ngIf="myaccount"><a routerLink="/login"><i class="fa fa-user-o"></i> My Account</a></li>
+
             </ul>
         </div>
     </div>
@@ -25,7 +26,7 @@
                 <div class="col-md-3">
                     <div class="header-logo" style="background-color: aliceblue;border-radius: 5px;">
                         <a href="#" class="logo">
-                            <img src="assets/img/logo1.png" alt="" style="width: 190px;height: 80px;">
+                            <img src="assets/img/ssc.jpeg" alt="" style="width: 190px;height: 80px;">
                         </a>
                     </div>
                 </div>
