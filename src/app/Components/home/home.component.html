@@ -1,5 +1,5 @@
 <!-- SECTION -->
-<div class="section" style="padding-bottom: 0px;">
+<div class="section" style="padding-bottom: 0px;padding-top: 0px;">
 
     <!-- image slider -->
 
@@ -15,10 +15,10 @@
 
             </div>
             <div class="carousel-item">
-                <img id="sl" src="/assets/img/furniture7.jpg" class="d-block w-100" alt="...">
+                <img id="sl" src="/assets/img/simpleFurniture.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img id="sl" src="/assets/img/lapi.jpg" class="d-block w-100" alt="...">
+                <img id="sl" src="/assets/img/simpleFuriture1.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" style="background-color: black;width: 4rem;height: 5rem;margin-top: 23rem;margin-left: 10rem;" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -113,7 +113,7 @@
 
             <!-- /product -->
             <div class="row">
-                <div class="col-md-3" style="border-right: 1px solid black;" *ngFor="let product of productlist; let i = index">
+                <div class="col-md-3" style="border-right: 1px solid black;" *ngFor="let product of productlist.slice(0 ,8); let i = index">
 
                     <div class="products-tabs">
                         <!-- tab -->
@@ -161,4 +161,111 @@
             </div>
         </div>
     </div>
+
+    <!-- image slider -->
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img id="sl" src="/assets/img/elec.jpg" class="d-block w-100" alt="...">
+
+            </div>
+            <div class="carousel-item">
+                <img id="sl" src="/assets/img/simpleFurniture.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img id="sl" src="/assets/img/furnitureimg.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" style="background-color: black;width: 4rem;height: 5rem;margin-top: 23rem;margin-left: 10rem;" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+        <button class="carousel-control-next" style="background-color: black;width: 4rem;height: 5rem;margin-top: 23rem;margin-right: 10rem;" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+    </div>
+
+    <!-- image slider end -->
+
+
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- section title -->
+            <!-- <div class="col-md-12">
+                <div class="section-title">
+                    <h3 class="title">New Products</h3> -->
+            <!-- <div class="section-nav">
+                    <ul class="section-tab-nav tab-nav">
+                        <li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
+                        <li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
+                        <li><a data-toggle="tab" href="#tab1">Cameras</a></li>
+                        <li><a data-toggle="tab" href="#tab1">Accessories</a></li>
+                    </ul>
+                </div> -->
+            <!-- </div>
+            </div> -->
+
+
+            <!-- /product -->
+            <div class="row">
+                <div class="col-md-3" style="border-right: 1px solid black;" *ngFor="let product of productlist.slice(8 ,200); let i = index">
+
+                    <div class="products-tabs">
+                        <!-- tab -->
+                        <div id="tab1" class="tab-pane active">
+                            <div class="products-slick" data-nav="#slick-nav-1">
+                                <!-- product -->
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img [src]="sanitize('data:image/png;base64, ' + _arrayBufferToBase64(product.image.data.data))" style="height: 219px;">
+                                        <div class="p.roduct-label">
+                                            <!-- <span class="sale">-30%</span> -->
+
+                                        </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">{{product.cat}}</p>
+                                        <h3 class="product-name"><a routerLink="/ecom/view">{{product.productname}}</a></h3>
+                                        <h4 class="product-price">{{product.price}} <del class="product-old-price">$990.00</del></h4>
+                                        <div class="product-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="product-btns">
+                                            <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                            <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                            <button class="quick-view"><a routerLink="/ecom/view"><i class="fa fa-eye"></i></a><span class="tooltipp">quick view</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn" (click)="addCart(product)"><i class="fa fa-shopping-cart" ></i> add to cart</button>
+                                    </div>
+                                </div>
+                                <!-- /product -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
 </div>

@@ -15,7 +15,7 @@ import { ViewproductComponent } from './Components/viewproduct/viewproduct.compo
 import { HotdealsComponent } from './Components/hotdeals/hotdeals.component';
 import { LoginComponent } from './Components/login/login.component';
 import { AboutComponent } from './Components/about/about.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SellproductComponent } from './Components/dashboard/sellproduct/sellproduct.component';
 import { AdminComponent } from './Components/admin/admin.component';
@@ -26,6 +26,7 @@ import { VerticalnavComponent } from './Components/dashboard/verticalnav/vertica
 import { EcommerceComponent } from './ecommerce/ecommerce.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { ViewusersComponent } from './Components/dashboard/viewusers/viewusers.component';
+import { InterceptInterceptor } from './Services/intercepter/intercept.interceptor';
 
 
 
@@ -66,7 +67,7 @@ import { ViewusersComponent } from './Components/dashboard/viewusers/viewusers.c
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

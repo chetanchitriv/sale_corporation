@@ -15,13 +15,14 @@ export class InterceptInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
     const token = localStorage.getItem("token")
+    console.log(token)
     if (!token) {
       return next.handle(request);
       
     }
 
     const req1 = request.clone({
-      headers: request.headers.set('Authorization', `Bearer ${token}`),
+      headers: request.headers.set('Authorization', ` ${token}`),
     });
 
     return next.handle(req1);

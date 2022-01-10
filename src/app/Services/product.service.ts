@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { observable, Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  apiUrl= "http://4bf1-43-224-0-159.ngrok.io/api/addproduct"
+  apiUrl=environment.apiendpoint
 
   constructor( private http:HttpClient) { }
 
@@ -15,18 +16,18 @@ export class ProductService {
 
   
   getProduct():Observable<any>{
-    return this.http.get("http://4bf1-43-224-0-159.ngrok.io/api/addproduct");
+    return this.http.get(this.apiUrl+`/api/addproduct`);
   }
 
   getcurerntproduct(id:any):Observable<any>{
-    return this.http.get(`${this.apiUrl}/${id}`)
+    return this.http.get(this.apiUrl+`/api/addproduct/`+id)
   }
 
 
 // login and signup start
 
   postlog(name:any ):Observable<any>{
-    return this.http.post("http://4bf1-43-224-0-159.ngrok.io/api/login" , name  )
+    return this.http.post(this.apiUrl +`/api/login` , name  )
     // .pipe(
     //   tap(tokens => this.dologinuser(data, tokens)),
     //   mapTo(true),
@@ -36,18 +37,19 @@ export class ProductService {
     
   }
   getlog( ):Observable<any>{
-    return this.http.get("http://4bf1-43-224-0-159.ngrok.io/api/login"   )
+    return this.http.get( this.apiUrl +`/api/login`  )
     
   }
   postsignup(name:any ){
-    return this.http.post("http://4bf1-43-224-0-159.ngrok.io/api/signup" , name  )
+    return this.http.post(this.apiUrl+ `/api/signup `, name  )
   }
   getsignup( ):Observable<any>{
-    return this.http.get("http://4bf1-43-224-0-159.ngrok.io/login/get")
+    return this.http.get(this.apiUrl+`/login/get`)
     
   }
   settoken(token:any){
     localStorage.setItem("token",token)
+   
   }
   isLoggedIn(){
    return !!localStorage.getItem("token")
@@ -65,7 +67,7 @@ export class ProductService {
 //  view users
 getuser():Observable<any>{
 
-  return this.http.get("http://4bf1-43-224-0-159.ngrok.io/api/viewusers")
+  return this.http.get(this.apiUrl+ `/api/viewusers`)
   // .pipe(res)
 }
 

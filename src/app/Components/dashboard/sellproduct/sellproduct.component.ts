@@ -4,6 +4,7 @@ import { FormGroup, Validators,} from '@angular/forms';
 import { FormBuilder} from '@angular/forms'
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/Services/product.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class SellproductComponent implements OnInit {
   sellForm:any=FormGroup; 
   alert : boolean=false ;
    // Variable to store shortLink from api response
-  
+   apiUrl=environment.apiendpoint
 
   constructor( private fb:FormBuilder, private service:ProductService, private http:HttpClient , private router:Router) { }
   
@@ -56,7 +57,7 @@ export class SellproductComponent implements OnInit {
     fd.append('color',this.sellForm.get('color').value);
     fd.append('price',this.sellForm.get('price').value);
 
-    this.http.post("http://4bf1-43-224-0-159.ngrok.io/api/addproduct",fd)
+    this.http.post(this.apiUrl+`/api/addproduct`,fd)
     .subscribe( 
         (res) => {
           this.alert=true,

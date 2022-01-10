@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class CartService {
   public cartItemList : any =[];
   public puductList = new BehaviorSubject<any>([])
   
-
+  apiUrl=environment.apiendpoint
   constructor(private http:HttpClient) { }
 
  
@@ -29,19 +30,22 @@ export class CartService {
 
  
 
-  addToCart(product:any){
+  addToCart(i:any){
 
-    this.cartItemList.push(product);
-    this.puductList.next(this.cartItemList)
-    this.getTotalPrice();
-    console.log(this.cartItemList)
-  //  return this.http.post("http://204d-43-224-0-155.ngrok.io/api/addtocart",data,token )
+    // this.cartItemList.push(product);
+    // this.puductList.next(this.cartItemList)
+    // this.getTotalPrice();
+    // console.log(this.cartItemList)
+   return this.http.post(this.apiUrl+`/api/addtocart`,i )
   }
 
+  getcartitem():Observable<any>{
+    return this.http.get(this.apiUrl+`/api/addtocart`)
+  }
 
   getProductList(){
-    // return this.http.get("http://204d-43-224-0-155.ngrok.io/api/addtocart",  ) ;
-    return this.puductList.asObservable()
+    return this.http.get(this.apiUrl+`/api/addtocart` ) ;
+    // return this.puductList.asObservable()
   }
 
 
@@ -59,12 +63,8 @@ export class CartService {
     return grabndTotal;
   }
     
-  remonveItem(product: any){
-      this.cartItemList.map((a:any, index:any)=>{
-        if(product.id === a.id){
-          this.cartItemList.splice(index,1)
-        }
-      })
+  deletcartitem(id: any):Observable<any>{
+   return this.http.delete(this.apiUrl+`/api/deletefromcart`,id)
   }
 
   removeAllItem(){

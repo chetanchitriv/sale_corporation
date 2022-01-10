@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-6" style="border-right: 1px solid black;">
         <div class="product-img">
-            <img src="assets/img/product01.png" alt="">
+            <img [src]="sanitize('data:image/png;base64, ' + _arrayBufferToBase64(currentproduct.image.data.data))" style="height: 314px;margin-left: 38px;margin-top: 138px;">
             <div class="product-label">
                 <!-- <span class="sale">-30%</span> -->
                 <!-- <span class="new">NEW</span> -->
@@ -10,21 +10,13 @@
     </div>
     <div class="col-md-6" style="padding-top: 60px;">
         <div class="container mt-3">
-
+            <h2>{{currentproduct.productname}}</h2>
             <table class="table table-hover" style="width: 60%;">
                 <thead>
-                    <tr>
-                        <th style="text-align: center;">
-                            <h2> Pos system</h2>
-                        </th>
-                        <th style="padding-left: 90px;">
-                            <button class="btn bg-danger " style="background-color:#D10024 ; color: white;border-radius: 5px;"><b>Buy Now</b></button>
-                            <button class="btn bg-danger" style="background-color:#D10024 ; color: white;border-radius: 5px; margin-left: 10px;"><b>Add To Cart</b></button>
-                        </th>
-                    </tr>
+
                     <tr>
                         <th>Product Name</th>
-                        <th>POS System</th>
+                        <th>{{currentproduct.productname}}</th>
 
                     </tr>
 
@@ -32,44 +24,40 @@
                 <tbody>
                     <tr>
                         <th>Description</th>
-                        <th> Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Magni sunt accusantium dicta modi iusto repudiandae, quidem <br>quas veniam dolor repellat incidunt vel voluptatem odit<br> ipsa enim qui, doloremque laborum deleniti.</th>
+                        <th> {{currentproduct.description}}</th>
 
                     </tr>
                     <tr>
                         <td>Color</td>
-                        <td>White</td>
+                        <td>{{currentproduct.color}}</td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Category</td>
+                        <td>{{currentproduct.cat}}</td>
 
                     </tr>
                     <tr>
-                        <td>Dimenssion</td>
-
-                        <td>mary@example.com</td>
-                    </tr>
-                    <tr>
-                        <td>Gross Weight</td>
-                        <td>0.18 kg</td>
+                        <td>Model No.</td>
+                        <td>{{currentproduct.modelno}}</td>
 
                     </tr>
                     <tr>
-                        <td>Display</td>
-                        <td>2.2” TFT colour LCD screen, white backlight</td>
+                        <td>Price</td>
+                        <td>{{currentproduct.price}}</td>
 
                     </tr>
                     <tr>
-                        <td>Power Supply</td>
-                        <td>2pcs AA battery, support USB charging</td>
+                        <th style="text-align: center;">
 
+                        </th>
+                        <th style="padding-left: 90px;">
+                            <button class="btn bg-danger " style="background-color:#D10024 ; color: white;border-radius: 5px;"><b>Buy Now</b></button>
+                            <button class="btn bg-danger" style="background-color:#D10024 ; color: white;border-radius: 5px; margin-left: 10px;"><b>Add To Cart</b></button>
+                        </th>
                     </tr>
-                    <tr>
-                        <td>Output Power</td>
-                        <td>+10dB</td>
 
-                    </tr>
-                    <tr>
-                        <td>Radio Range</td>
-                        <td>330 G./100 meters (line of Sight)</td>
-
-                    </tr>
 
                 </tbody>
             </table>

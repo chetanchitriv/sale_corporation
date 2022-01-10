@@ -21,7 +21,7 @@ export class SidenavComponent implements OnInit {
     }
 
     getcart(){
-      this.cart.getProductList().subscribe((res:any)=>{
+      this.cart.getcartitem().subscribe((res:any)=>{
         this.totalitem=res.length ;
     })
   }
