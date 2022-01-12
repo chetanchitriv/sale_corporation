@@ -9,7 +9,7 @@
 
                     <th>Price</th>
                     <th>Quantity</th>
-                    <th>Total</th>
+
                     <th>Action</th>
                 </thead>
                 <tbody>
@@ -20,18 +20,45 @@
                         <td> <img [src]="sanitize('data:image/png;base64, ' + _arrayBufferToBase64(item.image.data.data))" style="height: 125;width: 130px;"></td>
                         <td>{{item.productname}}</td>
                         <td>{{item.price}}</td>
-                        <td>{{item.quantity}}</td>
-                        <td>{{item.Toatal}}</td>
+                        <td>
+                            <select class="input-select">
+                                <option value="1" >1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="6">7</option>
+                                <option value="6">8</option>
+                                <option value="6">9</option>
+                                <option value="6">10</option>
+                        
+                           </select>
+                        </td>
 
-                        <td><button (click)="remove(item._id)" class="btn " style="background-color:#396f3c ; color: white;border-radius: 5px;"><b>Delet</b></button>
-                            <button class="btn  " style="background-color:#396f3c ; color: white;border-radius: 5px;margin-left: 10px;"><b>Buy Now</b></button></td>
+
+                        <td><button (click)="remove(item._id)" class="btn " style="background-color:#396f3c ; color: white;border-radius: 5px;"><b>Remove</b></button>
+                        </td>
 
                     </tr>
                 </tbody>
+                <thead>
+                    <th></th>
+                    <th></th>
+                    <th>e</th>
+
+                    <th></th>
+                    <th> <button class="btn  " style="background-color:#396f3c ; color: white;border-radius: 5px;margin-left: 10px;"><b>Proceed To Payement</b></button></th>
+
+                    <th>Sub Total:10000</th>
+                </thead>
             </table>
         </div>
     </div><br>
-    <button (click)=" emptycart()" class="add-to-cart-btn" style="margin-left: 80%;width: 130px; height: 40px;border-radius: 15px;background-color: #D10024;color: white ;"> <b>Clear Cart</b></button>
+    <button (click)=" emptycart(addtocartid.cartId)" class="add-to-cart-btn" style="margin-left: 80%;width: 130px; height: 40px;border-radius: 15px;background-color: #D10024;color: white ;"> <b>Clear Cart</b></button>
+
+
+
 
 </ng-container>
 <ng-container *ngIf="cartitem.length == 0">

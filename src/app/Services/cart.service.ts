@@ -43,33 +43,32 @@ export class CartService {
     return this.http.get(this.apiUrl+`/api/addtocart`)
   }
 
-  getProductList(){
-    return this.http.get(this.apiUrl+`/api/addtocart` ) ;
-    // return this.puductList.asObservable()
-  }
+  // getProductList(){
+  //   return this.http.get(this.apiUrl+`/api/addtocart` ) ;
+  //   // return this.puductList.asObservable()
+  // }
 
 
-  setProduct(product:any){
-    this.cartItemList.push(product);
-    this.puductList.next(product)
- }
+//   setProduct(product:any){
+//     this.cartItemList.push(product);
+//     this.puductList.next(product)
+//  }
 
 
-  getTotalPrice():number{
-    let grabndTotal = 0
-    this.cartItemList.map((a:any)=>{
-      grabndTotal  += a.price;
-    })
-    return grabndTotal;
-  }
+  // getTotalPrice():number{
+  //   let grabndTotal = 0
+  //   this.cartItemList.map((a:any)=>{
+  //     grabndTotal  += a.price;
+  //   })
+  //   return grabndTotal;
+  // }
     
-  deletcartitem(id: any):Observable<any>{
-   return this.http.delete(this.apiUrl+`/api/deletefromcart`,id)
+  deletcartitem(payload: any):Observable<any>{
+   return this.http.post(this.apiUrl+`/api/deletefromcart`,payload)
   }
 
-  removeAllItem(){
-    this.cartItemList= []
-    this.puductList.next(this.cartItemList)
+  removeAllItem(payload: any):Observable<any>{
+    return this.http.post(this.apiUrl+`/api/deletefromcart`,payload)
   }
 
 

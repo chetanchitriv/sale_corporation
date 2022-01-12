@@ -20,6 +20,8 @@ import { EcommerceComponent } from './ecommerce/ecommerce.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { AuthGuard } from './Services/auth.guard';
 import { ViewusersComponent } from './Components/dashboard/viewusers/viewusers.component';
+import { EditproductComponent } from './Components/dashboard/editproduct/editproduct.component';
+import { EditproducthereComponent } from './Components/dashboard/editproducthere/editproducthere.component';
 
 
 
@@ -51,6 +53,8 @@ const routes: Routes = [
      children:[
         { path: "sell", component: SellproductComponent },
         { path: "viewusers", component: ViewusersComponent },
+        { path: "editproduct", component: EditproductComponent },
+        { path: "editproduct1/:id", component: EditproducthereComponent }
      ]}
    
 

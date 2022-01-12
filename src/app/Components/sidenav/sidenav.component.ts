@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/Services/product.service';
 })
 export class SidenavComponent implements OnInit {
 
-  public totalitem: number = 0
+  public totalitem:any=0
   myaccount:boolean=true
   logout:boolean=false
 
@@ -22,7 +22,8 @@ export class SidenavComponent implements OnInit {
 
     getcart(){
       this.cart.getcartitem().subscribe((res:any)=>{
-        this.totalitem=res.length ;
+        this.totalitem=res.product.length ;
+        console.log(res.productId.length )
     })
   }
   check(){

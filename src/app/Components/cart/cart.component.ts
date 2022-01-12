@@ -13,6 +13,7 @@ export class CartComponent implements OnInit {
    public cartList:any =[];
    public cartitem:any=[]
    public grandTotal : number = 0
+   addtocartid:any
 
    
   constructor(private cart:CartService, private ser:ProductService, public _sanitizer: DomSanitizer) { }
@@ -27,23 +28,26 @@ export class CartComponent implements OnInit {
     // })
     
     this. getacartitems()
-    this.get()
+   
+    // this.get()
   
     }
-    get(){
-      //  var token = localStorage.getItem("token")
-      this.cart.getProductList().subscribe((res:any)=>{
+  //   get(){
+  //     //  var token = localStorage.getItem("token")
+  //     this.cart.getProductList().subscribe((res:any)=>{
 
-        console.log(res)
-        this.cartList=res;
-        this.grandTotal = this.cart.getTotalPrice()
-      })
-  }
+  //       console.log(res)
+  //       this.cartList=res;
+  //       this.grandTotal = this.cart.getTotalPrice()
+  //     })
+  // }
 
   getacartitems(){
     this.cart.getcartitem().subscribe((res:any)=>{
-            this.cartitem=res
+      this.addtocartid=res
+            this.cartitem=res.product
             console.log(res)
+            
     },
     (err:any)=>{
 
@@ -69,14 +73,29 @@ export class CartComponent implements OnInit {
  }
 
   remove(id:any){
-  
+    let payload = {
+      productId: id,
+     
+     
+    };
     console.log(id)
-   this.cart.deletcartitem(id).subscribe((res:any)=>{
+   this.cart.deletcartitem(payload).subscribe((res:any)=>{
      console.log(res)
+     alert("item removed succefully")
+     this.getacartitems()
    })
   }
-  emptycart(){
-    this.cart.removeAllItem();
+  emptycart(id:any){
+    let payload = {
+      cartId: id,
+    };
+    this.cart.removeAllItem(payload).subscribe((res:any)=>{
+      this.getacartitems()
+    });
+  }
+  Total(){
+    let grandtotal=0
+    
   }
 }
 

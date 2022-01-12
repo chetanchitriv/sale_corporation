@@ -27,6 +27,8 @@ import { EcommerceComponent } from './ecommerce/ecommerce.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { ViewusersComponent } from './Components/dashboard/viewusers/viewusers.component';
 import { InterceptInterceptor } from './Services/intercepter/intercept.interceptor';
+import { EditproductComponent } from './Components/dashboard/editproduct/editproduct.component';
+import { EditproducthereComponent } from './Components/dashboard/editproducthere/editproducthere.component';
 
 
 
@@ -56,6 +58,8 @@ import { InterceptInterceptor } from './Services/intercepter/intercept.intercept
     EcommerceComponent,
     SignupComponent,
     ViewusersComponent,
+    EditproductComponent,
+    EditproducthereComponent,
 
     
      

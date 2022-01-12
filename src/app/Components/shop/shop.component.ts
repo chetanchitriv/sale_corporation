@@ -17,6 +17,7 @@ export class ShopComponent implements OnInit {
   index:any
   isImageLoading: boolean |any;
   apiUrl=environment.apiendpoint
+  category:any=[]
 
   constructor(private ser:ProductService, private cart:CartService, private router:Router,  public _sanitizer: DomSanitizer,private http:HttpClient) { }
 
@@ -83,8 +84,27 @@ addCart(id:any){
     // this.getproduct()
   })
  
-  this.router.navigate(['/ecom/cart'])  
+  // this.router.navigate(['/ecom/cart'])  
 
 }
+
+search(product:any){
+  this.ser.getProduct().subscribe((res)=>{
+    this.productlist=res;
+    console.log(res)
+    this.productlist.forEach((a:any)=>{
+     if(a.cat==product.cat){
+      
+      this.category=a
+console.log(this.category)
+     }
+
+    })
+  });
+  (err:any)=>{
+
+  }
+}
+
 
 }

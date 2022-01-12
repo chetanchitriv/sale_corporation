@@ -16,6 +16,7 @@ export class ViewproductComponent implements OnInit {
   constructor(private ser:ProductService, private aroute:ActivatedRoute, public _sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
+    // take the id with routing 
     this.currentid=this.aroute.snapshot.params.id
     console.log(this.currentid)
     this.getproduct()

@@ -2,7 +2,7 @@
     <h1>Sell Your Product Here </h1><br><br> <br>
 
 
-    <form [formGroup]="sellForm">
+    <form [formGroup]="editForm">
         <div class="row">
             <div class="col-md-5">
                 <input class="i" formControlName="image" class="input" type="file" (change)="onfileselect($event)" placeholder="Add product Image">
@@ -24,8 +24,8 @@
                 <input class="i" class="input" placeholder="price" formControlName="price"><br><br><br>
             </div>
         </div>
-        <button class="btn bg-danger " (click)="sell()" style="background-color:#555555 ; color: white;border-radius: 5px;"><b>Sell
-                        Product</b></button>
+        <button class="btn bg-danger " style="background-color:#555555 ; color: white;border-radius: 5px;"><b>Update product
+                        </b></button>
 
     </form>
 
