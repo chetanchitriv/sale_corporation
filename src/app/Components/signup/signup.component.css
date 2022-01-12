@@ -1,0 +1,17 @@
+#login {
+    padding-top: 30px;
+}
+
+.container {
+    width: 56%;
+    height: 100%;
+    padding-bottom: 200px;
+    margin-bottom: 50px;
+}
+
+.con {
+    margin: 0;
+    padding: 21px;
+    background-image: url("https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/2022-01/modern-living-room-interior-with-sofa-green-plants-lamp-table-dark-wall-background.jpg");
+    background-size: 100%;
+}
