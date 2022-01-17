@@ -8,6 +8,7 @@
                 <li><a href="#"><i class="fa fa-map-marker"></i> Nagpur, Maharashtra</a></li>
             </ul>
             <ul class="header-links pull-right">
+                <li *ngIf="logout"><a style="color: aliceblue ;cursor: pointer;"><i class="fa fa-user-o"></i>{{username}}</a></li>
                 <li (click)="out()" *ngIf="logout"><a style="color: aliceblue ;cursor: pointer;"><i class="fa fa-sign-out" aria-hidden="true"></i> LogOut</a></li>
                 <li *ngIf="myaccount"><a routerLink="/login"><i class="fa fa-user-o"></i> My Account</a></li>
 

@@ -1,4 +1,4 @@
-<ng-container *ngIf="cartitem.length !=0">
+<ng-container *ngIf="checkarray.length !=0">
     <div class="card-table">
         <div class="card-product" style="margin-left: -25px;margin-right: 67px;">
             <table class="table table-responsive" style="margin-left: 40px;">
@@ -13,13 +13,13 @@
                     <th>Action</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of cartitem  ; let i =  index ">
+                    <tr *ngFor="let item of checkarray  ; let i =  index ">
                         <td>{{i+1}}</td>
 
 
                         <td> <img [src]="sanitize('data:image/png;base64, ' + _arrayBufferToBase64(item.image.data.data))" style="height: 125;width: 130px;"></td>
                         <td>{{item.productname}}</td>
-                        <td>{{item.price}}</td>
+                        <td>Rs: {{item.price}}</td>
                         <td>
                             <select class="input-select">
                                 <option value="1" >1</option>
@@ -37,7 +37,7 @@
                         </td>
 
 
-                        <td><button (click)="remove(item._id)" class="btn " style="background-color:#396f3c ; color: white;border-radius: 5px;"><b>Remove</b></button>
+                        <td><button (click)="remove(item)" class="btn " style="background-color:#396f3c ; color: white;border-radius: 5px;"><b>Remove</b></button>
                         </td>
 
                     </tr>
@@ -45,23 +45,23 @@
                 <thead>
                     <th></th>
                     <th></th>
-                    <th>e</th>
+                    <th></th>
 
                     <th></th>
                     <th> <button class="btn  " style="background-color:#396f3c ; color: white;border-radius: 5px;margin-left: 10px;"><b>Proceed To Payement</b></button></th>
 
-                    <th>Sub Total:10000</th>
+                    <th>Sub Total:{{grandTotal}}</th>
                 </thead>
             </table>
         </div>
     </div><br>
-    <button (click)=" emptycart(addtocartid.cartId)" class="add-to-cart-btn" style="margin-left: 80%;width: 130px; height: 40px;border-radius: 15px;background-color: #D10024;color: white ;"> <b>Clear Cart</b></button>
+    <button (click)=" emptycart(obj.cartId)" class="add-to-cart-btn" style="margin-left: 80%;width: 130px; height: 40px;border-radius: 15px;background-color: #D10024;color: white ;"> <b>Clear Cart</b></button>
 
 
 
 
 </ng-container>
-<ng-container *ngIf="cartitem.length == 0">
+<ng-container *ngIf="checkarray.length == 0">
     <div class="container ">
         <div class=>
             <img style="width: 30%;height:20%;margin-left: 35%;" src="./assets/img/eee.png" alt="" srcset="">

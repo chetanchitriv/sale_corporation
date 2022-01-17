@@ -1,20 +1,33 @@
-<table class="table">
-    <thead class="headth">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Product Name</th>
-            <th scope="col">Category</th>
-            <th scope="col">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of productlist let i =index">
-            <th scope="row"></th>
-            <td>{{i+1}}</td>
-            <td>{{item.productname}}</td>
-            <td>{{item.cat}}</td>
-            <td><button routerLink="/main/editproduct1/{{item._id}}">Edit</button><button>Delete</button></td>
-        </tr>
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <input id="input" class="input" type="text" placeholder="Search Product ..." [(ngModel)]="term">
+        </div>
+        <div class="col-md-3 container">
+            <p style="margin-top: 60px;">Total Products = {{total}}</p>
+        </div>
+    </div>
+    <table class="table">
+        <thead class="headth">
+            <tr>
+                <th style="text-align: center;" scope="col">Sr. No </th>
+                <th style="text-align: center;" scope="col">Product Name</th>
+                <th style="text-align: center;" scope="col">Category</th>
+                <th style="text-align: center;" scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="head" *ngFor="let item of productlist | paginate: { itemsPerPage: 10, currentPage: p } |filter:term  let i =index" style="text-align: center;">
 
-    </tbody>
-</table>
+                <td>{{i+1}}</td>
+                <td>{{item.productname}}</td>
+                <td>{{item.cat}}</td>
+                <td><button id="editbtn" routerLink="/main/editproduct1/{{item._id}}">Edit</button>&nbsp;&nbsp;<button id="editbtn">Delete</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div id="page">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>

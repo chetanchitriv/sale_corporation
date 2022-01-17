@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/Services/cart.service';
 import { ProductService } from 'src/app/Services/product.service';
 
@@ -12,48 +13,65 @@ export class CartComponent implements OnInit {
 
    public cartList:any =[];
    public cartitem:any=[]
+   productlist:any =[]
    public grandTotal : number = 0
    addtocartid:any
+   obj:any
+  
+
+   checkarray:any=[]
 
    
-  constructor(private cart:CartService, private ser:ProductService, public _sanitizer: DomSanitizer) { }
+  constructor(private cart:CartService, private ser:ProductService, public _sanitizer: DomSanitizer, public route:Router) { }
  
 
 
   ngOnInit(): void {
-    // this.cart.getProductList().subscribe((res:any)=>{
-    //   console.log(res)
-    //   this.cartList=res;
-    //   this.grandTotal = this.cart.getTotalPrice()
-    // })
     
-    this. getacartitems()
-   
-    // this.get()
+    this.getproduct()
   
     }
-  //   get(){
-  //     //  var token = localStorage.getItem("token")
-  //     this.cart.getProductList().subscribe((res:any)=>{
+  
+  getproduct(){
 
-  //       console.log(res)
-  //       this.cartList=res;
-  //       this.grandTotal = this.cart.getTotalPrice()
-  //     })
-  // }
-
-  getacartitems(){
     this.cart.getcartitem().subscribe((res:any)=>{
-      this.addtocartid=res
-            this.cartitem=res.product
-            console.log(res)
-            
+    this.obj=res
+      this.addtocartid=res.product      
     },
     (err:any)=>{
 
     })
-    
+
+
+    this.ser.getProduct().subscribe((res)=>{
+      this.productlist=res;
+      console.log(this.productlist)
+      res.forEach((element:any)=> {
+
+        for(let x in this.addtocartid){
+          console.log(x);
+       if(element._id == this.addtocartid[x] ){
+        
+        this.grandTotal  +=  Number(element.price)
+            
+               this.checkarray.push(element)
+               console.log( this.checkarray)
+              
+       }else{
+         console.log("nahi hua ");
+         
+       }} 
+    });
+    (err:any)=>{
+  
+    }
+  })
+
+  return this.checkarray;
+ 
   }
+
+
 
   sanitize(image:any){
      
@@ -72,31 +90,37 @@ export class CartComponent implements OnInit {
   
  }
 
-  remove(id:any){
+  remove(item:any){
     let payload = {
-      productId: id,
-     
-     
+      productId: item._id,
     };
-    console.log(id)
+    console.log(item)
+    this.checkarray.map((a:any,index:any)=>{
+      if(item._id == a._id){
+        this.checkarray.splice(index,1)
+      }
+    })
    this.cart.deletcartitem(payload).subscribe((res:any)=>{
      console.log(res)
-     alert("item removed succefully")
-     this.getacartitems()
+    //  alert("item removed succefully")
+    //  window.location.reload()
+    //  this.getproduct()
    })
   }
+
   emptycart(id:any){
     let payload = {
       cartId: id,
     };
-    this.cart.removeAllItem(payload).subscribe((res:any)=>{
-      this.getacartitems()
-    });
-  }
-  Total(){
-    let grandtotal=0
+    console.log(payload);
     
-  }
-}
+    this.cart.removeAllItem(payload).subscribe((res:any)=>{
+  
+  this.checkarray=[]
+    });
 
+  }
+  
+}
+ 
 

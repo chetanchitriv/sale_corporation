@@ -5,31 +5,20 @@
             <img src="assets/img/ssc.jpeg" alt="" style="width: 230px;height: 100px;">
         </a>
     </div>
-<<<<<<< HEAD
-    <a routerLink="/ecom/home" class="w3-bar-item w3-button" style="border-bottom:2px solid #cecbcb"> Dashboard</a>
-    <a routerLink="/ecom/home" class="w3-bar-item w3-button" style="border-bottom:2px solid #cecbcb"> Home</a>
-    <a routerLink="viewusers" class="w3-bar-item w3-button" style="border-bottom:2px solid #cecbcb;"> View-User</a>
-    <a routerLink="sell" class="w3-bar-item w3-button" style="border-bottom:2px solid #cecbcb;"> Add-Product</a>
-    <a routerLink="editproduct" class="w3-bar-item w3-button" style="border-bottom:2px solid #cecbcb;"> Edit -Product</a>
-    <a class="w3-bar-item w3-button" style="border-bottom:2px solid #cecbcb;"> Delet-Product</a>
-    <a class="w3-bar-item w3-button" style="border-bottom:2px solid #cecbcb;">Add-Category</a>
-    <a class="w3-bar-item w3-button" style="border-bottom:2px solid #cecbcb;">Sub-Category</a>
-=======
 
-    <a routerLink="/ecom/home" class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px; color: black;"> <i class="fa fa-dashcube" aria-hidden="true"></i>&nbsp;&nbsp; Dashboard
+    <a (click)="boom()" class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px; color: black;"> <i class="fa fa-dashcube" aria-hidden="true"></i>&nbsp;&nbsp; Dashboard
     </a>
-    <a routerLink="/ecom/home" class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px; color:black;"> <i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp; Home
+    <a (click)="home()" routerLink="/ecom/home" class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px; color:black;"> <i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp; Home
     </a>
-    <a routerLink="viewusers" class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px; color:black;"> <i class="fa fa-address-card" aria-hidden="true"></i>&nbsp;&nbsp; View-User</a>
-    <a routerLink="sell" class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px; color:black;"> <i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp; &nbsp; Add-Product
+    <a (click)="boom()" routerLink="viewusers" class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px; color:black;"> <i class="fa fa-address-card" aria-hidden="true"></i>&nbsp;&nbsp; View-User</a>
+    <a (click)="boom()" routerLink="sell" class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px; color:black;"> <i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp; &nbsp; Add-Product
     </a>
-    <a class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px;color:black; "> <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp; Edit-Product
+    <a (click)="boom()" routerLink="editproduct" class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px;color:black; "> <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp; Edit-Product
     </a>
-    <a class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px;color:black;"><i class="fa fa-window-close" aria-hidden="true"></i>&nbsp; &nbsp; 
+    <a (click)="boom()" class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px;color:black;"><i class="fa fa-window-close" aria-hidden="true"></i>&nbsp; &nbsp; 
         Delete-Product</a>
-    <a class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px;color:black;"> <i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp; &nbsp; Add-Category</a>
-    <a class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px;color:black;"><i class="fa fa-cart-plus" aria-hidden="true"></i> &nbsp; &nbsp; Sub-Category</a>
->>>>>>> f93cdaee395467e72ec5803a637c87480cd25b2e
+    <a (click)="boom()" class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px;color:black;"> <i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp; &nbsp; Add-Category</a>
+    <a (click)="boom()" class="w3-bar-item w3-button" style="border-bottom:2px solid rgb(240, 178, 62); font-size: 17px;color:black;"><i class="fa fa-cart-plus" aria-hidden="true"></i> &nbsp; &nbsp; Sub-Category</a>
 
 
 </div>
@@ -54,7 +43,7 @@
     </div>
     <router-outlet></router-outlet>
 
-    <img src="assets/img/furnitureimgmain.jpg" alt="Car" style="width:100%">
+    <img *ngIf="admin" src="assets/img/furnitureimgmain.jpg" alt="Car" style="width:100%">
 
 
 </div>

@@ -29,7 +29,8 @@ import { ViewusersComponent } from './Components/dashboard/viewusers/viewusers.c
 import { InterceptInterceptor } from './Services/intercepter/intercept.interceptor';
 import { EditproductComponent } from './Components/dashboard/editproduct/editproduct.component';
 import { EditproducthereComponent } from './Components/dashboard/editproducthere/editproducthere.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination'
 
 
 
@@ -69,7 +70,9 @@ import { EditproducthereComponent } from './Components/dashboard/editproducthere
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptInterceptor, multi: true }],
   bootstrap: [AppComponent]

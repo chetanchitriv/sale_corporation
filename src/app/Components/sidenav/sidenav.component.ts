@@ -12,26 +12,28 @@ export class SidenavComponent implements OnInit {
   public totalitem:any=0
   myaccount:boolean=true
   logout:boolean=false
+  username:any
 
   constructor(private cart:CartService , private ser:ProductService) { }
 
   ngOnInit(): void {
-    this.getcart();
+    this.getcart()
     this.check()
     }
 
     getcart(){
       this.cart.getcartitem().subscribe((res:any)=>{
-        this.totalitem=res.product.length ;
-        console.log(res.productId.length )
+        this.totalitem=res.product.length;
+        console.log(res )
     })
+      
   }
   check(){
     if(this.ser.isLoggedIn()){
       
     this.myaccount=false
     this.logout=true
-
+    this.username=localStorage.getItem("user")
 
     }else{
       this.myaccount=true

@@ -8,14 +8,27 @@ import { Router } from '@angular/router';
 })
 export class MainComponent implements OnInit {
 
+admin:boolean=true
+
+
   constructor(private router:Router) { }
 
   ngOnInit(): void {
+
+ 
   }
 
   logout(){
     localStorage.removeItem("token")
     localStorage.removeItem("role")
+    localStorage.removeItem("user")
     this.router.navigate(['/login'])
   }
+  boom(){
+    this.admin=false
+  }
+  home(){
+    this.admin=true
+  }
 }
+

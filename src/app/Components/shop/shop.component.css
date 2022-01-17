@@ -36,6 +36,18 @@ body {
     margin-left: 50px;
 }
 
+#input {
+    height: 40px;
+    padding: 5px 15px;
+    border: 1px solid #E4E7ED;
+    background-color: #FFF;
+    width: 54%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
 @media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 15px;

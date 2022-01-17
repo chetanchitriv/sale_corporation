@@ -11,6 +11,9 @@ import { ProductService } from 'src/app/Services/product.service';
 export class EditproductComponent implements OnInit {
 
   productlist:any=[]
+  p: number = 1
+  term=''
+  total:any
 
   constructor(private ser:ProductService, private cart:CartService, private router:Router,) { }
 
@@ -22,6 +25,7 @@ export class EditproductComponent implements OnInit {
 
     this.ser.getProduct().subscribe((res)=>{
       this.productlist=res;
+      this.total=res.length
       console.log(res)
       this.productlist.forEach((a:any)=>{
         Object.assign(a,{quantity:1,Toatal:a.price})

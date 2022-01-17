@@ -6,6 +6,15 @@
         <div class="row">
             <div class="col-md-5">
                 <input class="i" formControlName="image" class="input" type="file" (change)="onfileselect($event)" placeholder="Add product Image">
+                <div class="product-img">
+
+                    <img [src]="sanitize('data:image/png;base64, ' + _arrayBufferToBase64(response.data.data))" style="height: 219px;width: 211px;">
+                    <div class="p.roduct-label">
+                        <button (click)="deletimage()">delete</button>
+                        <!-- <span class="sale">-30%</span> -->
+
+                    </div>
+                </div>
                 <br><br><br>
                 <input class="i" formControlName="productname" type="text" class="input" placeholder="Product Name"><br><br><br>
                 <select class="i" formControlName="cat" class="input-select">
@@ -24,7 +33,7 @@
                 <input class="i" class="input" placeholder="price" formControlName="price"><br><br><br>
             </div>
         </div>
-        <button class="btn bg-danger " style="background-color:#555555 ; color: white;border-radius: 5px;"><b>Update product
+        <button class="btn bg-danger " style="background-color:#555555 ; color: white;border-radius: 5px;" (click)="update()"><b>Update product
                         </b></button>
 
     </form>

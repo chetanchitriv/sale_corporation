@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-
+  term=''
   productlist:any=[]
   index:any
   isImageLoading: boolean |any;

@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
             this.route.navigate(['/main'])
           }else
           {
+            localStorage.setItem("user" ,res.fullname)
             this.ser.settoken(res.accesstoken)
             alert("Yor are Succesfully Logged In")
             this.route.navigate(['/ecom/home'])

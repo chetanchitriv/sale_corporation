@@ -60,16 +60,16 @@
             <div class="col-md-12">
                 <div class="newsletter">
 
-                    <form>
-                        <input class="input" type="text" placeholder="Search Here">
-                        <button class="newsletter-btn"> Search</button>
-                    </form>
+
+                    <input id="input" class="input" type="text" placeholder="Search Here" [(ngModel)]="term">
+
+
 
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3" style="border: 1px solid black;" *ngFor="let product of productlist; let i = index">
+            <div class="col-md-3" style="border: 1px solid black;" *ngFor="let product of productlist |filter:term; let i = index ">
 
                 <div class="products-tabs">
                     <!-- tab -->

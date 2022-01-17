@@ -3,10 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import { observable, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
+function _window() : any {
+  return window;
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+
+  get nativeWindow() : any {
+    return _window();
+ }
 
   apiUrl=environment.apiendpoint
 
