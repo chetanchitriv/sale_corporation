@@ -5,26 +5,27 @@
     <form [formGroup]="sellForm">
         <div class="row">
             <div class="col-md-5">
-                <input class="i" formControlName="image" class="input" type="file" (change)="onfileselect($event)" placeholder="Add product Image">
-                <br><br><br>
-                <input class="i" formControlName="productname" type="text" class="input" placeholder="Product Name"><br><br><br>
-                <select class="i" formControlName="cat" class="input-select">
+                <input id="i" formControlName="image" class="input" type="file" (change)="onfileselect($event)" placeholder="Add product Image">
+                <br><br>
+                <input id="i" formControlName="productname" type="text" class="input" placeholder="Product Name"><br><br><br>
+
+                <label>Select Category</label> <select id="i" formControlName="cat" class="input-select" style="margin-left: 50px;width: 302px;">
                   <option value="select Categories" >Select Categories</option>
                   <option value="Furniture">Furniture</option>
                   <option value="Eclectronics">Eclectronics</option>
                  
           
              </select><br><br><br>
-                <input class="i" formControlName="description" class="input" placeholder="Description"><br><br><br>
+                <input id="i" formControlName="description" class="input" placeholder="Description"><br><br><br>
             </div>
             <div class="col-md-5">
 
-                <input class="i" formControlName="modelno" class="input" placeholder="Model No."><br><br><br>
-                <input class="i" class="input" placeholder="Color" formControlName="color"><br><br><br>
-                <input class="i" class="input" placeholder="price" formControlName="price"><br><br><br>
+                <input id="i" formControlName="modelno" class="input" placeholder="Model No."><br><br><br>
+                <input id="i" class="input" placeholder="Color" formControlName="color"><br><br><br>
+                <input id="i" class="input" placeholder="price" formControlName="price"><br><br><br>
             </div>
         </div>
-        <button class="btn bg-danger " (click)="sell()" style="background-color:#555555 ; color: white;border-radius: 5px;"><b>Sell
+        <button class="btn bg-danger " (click)="sell()" style="background-color:#555555 ; color: white;border-radius: 5px;margin-left: 275px;width: 30%; height: 42px;"><b>Sell
                         Product</b></button>
 
     </form>

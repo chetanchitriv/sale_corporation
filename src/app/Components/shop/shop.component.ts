@@ -14,10 +14,13 @@ import { environment } from 'src/environments/environment';
 export class ShopComponent implements OnInit {
   term=''
   productlist:any=[]
+  filter:any
   index:any
   isImageLoading: boolean |any;
   apiUrl=environment.apiendpoint
   category:any=[]
+  max=''
+  min=''
 
   constructor(private ser:ProductService, private cart:CartService, private router:Router,  public _sanitizer: DomSanitizer,private http:HttpClient) { }
 
@@ -52,6 +55,8 @@ getproduct(){
 
   this.ser.getProduct().subscribe((res)=>{
     this.productlist=res;
+    this.filter=res
+
     console.log(res)
     this.productlist.forEach((a:any)=>{
       Object.assign(a,{quantity:1,Toatal:a.price})
@@ -88,23 +93,37 @@ addCart(id:any){
 
 }
 
-search(product:any){
-  this.ser.getProduct().subscribe((res)=>{
-    this.productlist=res;
-    console.log(res)
-    this.productlist.forEach((a:any)=>{
-     if(a.cat==product.cat){
+// search(product:any){
+//   this.ser.getProduct().subscribe((res)=>{
+//     this.productlist=res;
+//     console.log(res)
+//     this.productlist.forEach((a:any)=>{
+//      if(a.cat==product.cat){
       
-      this.category=a
-console.log(this.category)
-     }
+//       this.category=a
+// console.log(this.category)
+//      }
 
-    })
-  });
-  (err:any)=>{
+//     })
+//   });
+//   (err:any)=>{
 
-  }
+//   }
+// }
+searchbycat(category:any){
+this.productlist=this.filter.filter((a:any)=>{
+  if( a.cat == category || category==''){
+console.log(a);
+return a
+ } 
+})
 }
-
+filterbyprice(){
+  console.log(this.max,this.min);
+  
+  this.productlist=this.filter.filter((a:any)=>{
+    return a.price >= this.min && a.price <= this.max
+  })
+}
 
 }

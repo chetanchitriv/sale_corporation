@@ -4,7 +4,34 @@ table {
     width: 89%;
 }
 
+td,
+th {
+    text-align: center;
+}
+
 .headth {
     background-color: rgb(29, 29, 86);
     color: white;
+}
+
+#page {
+    width: 350px;
+    height: 70px;
+    border: none;
+    padding-top: 10px;
+    margin-left: 70%;
+    margin-top: 30px;
+}
+
+#input {
+    height: 40px;
+    padding: 5px 15px;
+    border: 1px solid #E4E7ED;
+    background-color: #FFF;
+    width: 33%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 70px;
+    border: 1px solid black;
+    border-radius: 15px;
 }

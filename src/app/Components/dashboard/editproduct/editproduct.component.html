@@ -1,11 +1,32 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-7">
-            <input id="input" class="input" type="text" placeholder="Search Product ..." [(ngModel)]="term">
-        </div>
-        <div class="col-md-3 container">
+        <input id="input" class="input" type="text" placeholder="Search Product ..." [(ngModel)]="term">
+
+        <div class="col-md-3 " style="padding-left: 50px;">
             <p style="margin-top: 60px;">Total Products = {{total}}</p>
+
         </div>
+        <div class="col-md-1">
+            <p style="margin-top: 60px;margin-left: 42px;">list:</p>
+
+        </div>
+        <div class="col-md-1">
+            <select style="margin-top: 60px;    height: 29px;" class="input-select" [(ngModel)]="selectInput">
+           
+                <option value="5">5</option>
+                
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="1000">All</option>
+        
+           </select>
+        </div>
+
+
+
+
+
+
     </div>
     <table class="table">
         <thead class="headth">
@@ -17,12 +38,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr id="head" *ngFor="let item of productlist | paginate: { itemsPerPage: 10, currentPage: p } |filter:term  let i =index" style="text-align: center;">
+            <tr id="head" *ngFor="let item of productlist | paginate: { itemsPerPage: selectInput, currentPage: p } |filter:term  let i =index" style="text-align: center;">
 
                 <td>{{i+1}}</td>
                 <td>{{item.productname}}</td>
                 <td>{{item.cat}}</td>
-                <td><button id="editbtn" routerLink="/main/editproduct1/{{item._id}}">Edit</button>&nbsp;&nbsp;<button id="editbtn">Delete</button></td>
+                <td><button id="editbtn" routerLink="/main/editproduct1/{{item._id}}">Edit</button>&nbsp;&nbsp;<button id="editbtn" (click)="deletproduct(item)">Delete</button></td>
             </tr>
 
         </tbody>

@@ -14,6 +14,7 @@ export class EditproductComponent implements OnInit {
   p: number = 1
   term=''
   total:any
+  selectInput:any
 
   constructor(private ser:ProductService, private cart:CartService, private router:Router,) { }
 
@@ -35,5 +36,18 @@ export class EditproductComponent implements OnInit {
     (err:any)=>{
   
     }
+  }
+  deletproduct(item:any){
+    let payload = {
+      productId: item._id,
+    };
+    this.productlist.map((a:any , index:any)=>{
+      if(item._id == a._id){
+        this.productlist.splice(index,1)
+      }
+    })
+    this.ser.deletproduct(item._id).subscribe((res:any)=>{
+
+    })
   }
 }

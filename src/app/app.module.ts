@@ -30,7 +30,8 @@ import { InterceptInterceptor } from './Services/intercepter/intercept.intercept
 import { EditproductComponent } from './Components/dashboard/editproduct/editproduct.component';
 import { EditproducthereComponent } from './Components/dashboard/editproducthere/editproducthere.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import {NgxPaginationModule} from 'ngx-pagination'
+import {NgxPaginationModule} from 'ngx-pagination';
+import { ProfileComponent } from './Components/profile/profile.component'
 
 
 
@@ -61,6 +62,7 @@ import {NgxPaginationModule} from 'ngx-pagination'
     ViewusersComponent,
     EditproductComponent,
     EditproducthereComponent,
+    ProfileComponent,
 
     
      

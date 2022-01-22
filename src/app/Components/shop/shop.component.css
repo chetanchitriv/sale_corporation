@@ -41,11 +41,11 @@ body {
     padding: 5px 15px;
     border: 1px solid #E4E7ED;
     background-color: #FFF;
-    width: 54%;
+    width: 94%;
     margin-bottom: 50px;
     margin-top: 50px;
     border: 1px solid black;
-    border-radius: 15px;
+    border-radius: 7px;
 }
 
 @media screen and (max-height: 450px) {
@@ -55,4 +55,19 @@ body {
     .sidenav a {
         font-size: 18px;
     }
+}
+
+#pricebtn {
+    border: none;
+    border-radius: 7px;
+    width: 100px;
+    height: 35px;
+    background-color: #d10000e3;
+    color: aliceblue;
+    margin-left: 35px;
+}
+
+#pricein {
+    border: black;
+    border-radius: 10px;
 }
