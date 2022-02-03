@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-whishlist',
   templateUrl: './whishlist.component.html',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhishlistComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
+    
   }
-
 }
+
+ 

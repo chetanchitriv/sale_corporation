@@ -12,7 +12,7 @@ export class SidenavComponent implements OnInit {
   public totalitem:any=0
   myaccount:boolean=true
   logout:boolean=false
-  username:any
+  username:any;
 
   constructor(private cart:CartService , private ser:ProductService) { }
 

@@ -18,6 +18,7 @@ export class ShopComponent implements OnInit {
   isImageLoading: boolean |any;
   apiUrl=environment.apiendpoint
   category:any=[]
+  rzp1:any;
 
   constructor(private ser:ProductService, private cart:CartService, private router:Router,  public _sanitizer: DomSanitizer,private http:HttpClient) { }
 
@@ -104,6 +105,33 @@ console.log(this.category)
   (err:any)=>{
 
   }
+}
+
+options = {
+  "key": "rzp_test_QTqT8RlhnJKjDk", 
+  "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+  "currency": "INR",
+  "name": "Acme Corp",
+  "description": "Test Transaction",
+  "image": "https://example.com/your_logo",
+  "order_id": "", 
+  "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+  "prefill": {
+      "name": "Gaurav Kumar",
+      "email": "gaurav.kumar@example.com",
+      "contact": "9999999999"
+  },
+  "notes": {
+      "address": "Razorpay Corporate Office"
+  },
+  "theme": {
+      "color": "#3399cc"
+  }
+}
+
+pay(){
+  this.rzp1 = new this.ser.nativeWindow.Razorpay(this.options)
+  this.rzp1.open();
 }
 
 

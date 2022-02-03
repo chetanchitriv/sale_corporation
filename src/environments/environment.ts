@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiendpoint :"http://220a-43-224-0-243.ngrok.io"
+  apiendpoint :"http://8c58-150-129-202-125.ngrok.io"
 };
 
 /*

@@ -7,6 +7,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CartService {
+  deletwishlistitem(payload: { productId: any; }) {
+    throw new Error('Method not implemented.');
+  }
 
   public cartItemList : any =[];
   public puductList = new BehaviorSubject<any>([])
