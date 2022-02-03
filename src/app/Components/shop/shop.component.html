@@ -2,120 +2,149 @@
     <div class="col-md-2">
         <div class="container mt-3 " style="margin-top: 30px; width: 180px; border-right: 1px solid rgb(108, 108, 108);height: 100vh;">
             <button (click)="pay()" class="btn bg-danger " style="background-color:#D10024 ; color: white;border-radius: 5px;"><b>Buy Now</b></button>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th style="border: 1px solid rgb(223, 217, 217);background-color: rgb(252, 250, 250);box-shadow: 0px 0px 33px 0px rgba(0, 0, 0, 0.336);"><b>Category</b></th>
+            <div class="container mt-3 " style="margin-top: 30px;height: 1%; width: 195px; border: 1px solid rgb(223, 217, 217);background-color: rgb(252, 250, 250);box-shadow: 0px 0px 33px 0px rgba(0, 0, 0, 0.336);;height: 100vh;">
 
-                    </tr>
-                </thead>
-                <tbody style="cursor: pointer">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th style="border: 1px solid rgb(223, 217, 217);background-color: rgb(252, 250, 250);box-shadow: 0px 0px 33px 0px rgba(0, 0, 0, 0.336);"><b>Category</b></th>
 
-                    <tr>
-                        <td style="border: 1px solid rgb(223, 217, 217);background-color: rgb(252, 250, 250);box-shadow: 0px 0px 33px 0px rgba(0, 0, 0, 0.336);">
+                        </tr>
+                    </thead>
+                    <tbody style="cursor: pointer">
+
+                        <tr>
+                            <td style="border: 1px solid rgb(223, 217, 217);background-color: rgb(252, 250, 250);box-shadow: 0px 0px 33px 0px rgba(0, 0, 0, 0.336);">
 
 
-                            <!-- Default dropend button -->
-                            <div class="btn-group dropend">
-                                <!-- <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> -->
-                                <img class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" src="/assets/img/cat2.jpg" style="width: 150px;height: 120px;" alt="" srcset=""> Furnitures
+                                <!-- Default dropend button -->
+                                <div class="btn-group dropend">
+                                    <!-- <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> -->
+                                    <img class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" src="/assets/img/cat2.jpg" style="width: 150px;height: 120px;" alt="" srcset="" (click)="searchbycat('Furniture')"> Furnitures
 
-                                <ul class="dropdown-menu" style="margin-left: 30px;padding: 10px;">
+                                    <!-- <ul class="dropdown-menu" style="margin-left: 30px;padding: 10px;">
                                     <li>Sofas and ArmChairs</li><br>
                                     <li>Tables and Chairs</li><br>
                                     <li>Sleepinfg Areas and Childrens bedroom</li><br>
                                     <li>Kids Furniture</li><br>
                                     <li>Furniture Components And Hardware</li><br>
-                                </ul>
-                            </div>
+                                </ul> -->
+                                </div>
 
 
-                        </td>
+                            </td>
 
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid rgb(223, 217, 217);background-color: rgb(252, 250, 250);box-shadow: 0px 0px 33px 0px rgba(0, 0, 0, 0.336);">
-                            <div class="btn-group dropend">
-                                <img class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" src="/assets/img/cat1.jpg" style="width: 150px;height: 120px;" alt="" srcset=""> Electronics
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid rgb(223, 217, 217);background-color: rgb(252, 250, 250);box-shadow: 0px 0px 33px 0px rgba(0, 0, 0, 0.336);">
+                                <div class="btn-group dropend">
+                                    <img class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" src="/assets/img/cat1.jpg" style="width: 150px;height: 120px;" alt="" srcset="" (click)="searchbycat('Eclectronics')"> Electronics
 
-                                <ul class="dropdown-menu" style="margin-left: 30px;padding: 10px;">
-                                    <!-- Dropdown menu links -->
-                                    <li>Mobile Devices</li><br>
+                                    <!-- <ul class="dropdown-menu" style="margin-left: 30px;padding: 10px;">
+                                     Dropdown menu links -->
+                                    <!-- <li>Mobile Devices</li><br>
                                     <li>Wearables</li><br>
                                     <li>TVs, Set Top Boxes, Monitors</li><br>
                                     <li>Laptops, Tablets, Computers</li><br>
                                     <li>Appliances & White Goods</li><br>
                                     <li>Computers, Printers, Scanners</li><br>
-                                </ul>
-                            </div>
-                        </td>
+                                </ul> -->
+                                </div>
+                            </td>
 
-                    </tr>
-
-
-                </tbody>
-            </table>
-
-        </div>
-    </div>
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="newsletter">
+                        </tr>
 
 
-                    <input id="input" class="input" type="text" placeholder="Search Here" [(ngModel)]="term">
+                    </tbody>
+                </table>
 
-
-
-                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3" style="border: 1px solid rgb(223, 217, 217);background-color: rgb(252, 250, 250);box-shadow: 0px 0px 33px 0px rgba(0, 0, 0, 0.336);" *ngFor="let product of productlist |filter:term; let i = index ">
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="newsletter">
 
-                <div class="products-tabs">
-                    <!-- tab -->
-                    <div id="tab1" class="tab-pane active">
-                        <div class="products-slick" data-nav="#slick-nav-1">
-                            <!-- product -->
-                            <div class="product">
-                                <div class="product-img">
-                                    <a routerLink="/ecom/view/{{product._id}}">
-                                        <img [src]="sanitize('data:image/png;base64, ' + _arrayBufferToBase64(product.image.data.data))" style="height: 219px;width: 211px;"></a>
-                                    <div class="p.roduct-label">
-                                        <!-- <span class="sale">-30%</span> -->
+                        <input id="input" class="input" type="text" placeholder="Search Here" [(ngModel)]="term">
 
-                                    </div>
-                                </div>
-                                <div class="product-body">
-                                    <p class="product-category">{{product.cat}}</p>
-                                    <h3 class="product-name"><a routerLink="/ecom/view">{{product.productname}}</a></h3>
-                                    <h4 class="product-price">{{product.price}} <del class="product-old-price">$990.00</del></h4>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="product-btns">
-                                        <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                                        <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                        <button class="quick-view"><a routerLink="/ecom/view/{{product._id}}"><i class="fa fa-eye"></i></a><span class="tooltipp">quick view</span></button>
-                                    </div>
-                                </div>
-                                <div class="add-to-cart">
-                                    <button class="add-to-cart-btn" (click)="addCart(product._id)"><i class="fa fa-shopping-cart" ></i> add to cart</button>
-                                </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="newsletter">
+
+
+                        <div data-role="page">
+                            <div data-role="header">
+                                <h4>Set Your Price Range</h4>
                             </div>
-                            <!-- /product -->
+
+
+                            <form>
+
+                                <div data-role="rangeslider">
+                                    <label for="price-min">Min:</label>
+                                    <input id="pricein" type="number" name="price-min" id="price-min" value="200" min="0" max="1000" [(ngModel)]="min">&nbsp;&nbsp;
+                                    <label for="price-max">Max:</label>
+                                    <input id="pricein" type="number" name="price-max" id="price-max" value="800" min="0" max="1000" [(ngModel)]="max">
+                                    <button (click)="filterbyprice()" id="pricebtn">submit</button>
+
+                                </div><br>
+
+                            </form>
                         </div>
+
+
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <<<<<<< HEAD <div class="col-md-3" style="border: 1px solid rgb(223, 217, 217);background-color: rgb(252, 250, 250);box-shadow: 0px 0px 33px 0px rgba(0, 0, 0, 0.336);" *ngFor="let product of productlist |filter:term; let i = index ">
+                    =======
+                    <div class="col-md-3" style="border: 1px solid rgb(223, 217, 217);background-color: rgb(252, 250, 250);box-shadow: 0px 0px 33px 0px rgba(0, 0, 0, 0.336);" *ngFor="let product of productlist  |filter:term;  let i = index ">
+                        >>>>>>> cbfd7b8327b0b9f821d91a0ceecba26d5dbdd0cb
 
+                        <div class="products-tabs">
+                            <!-- tab -->
+                            <div id="tab1" class="tab-pane active">
+                                <div class="products-slick" data-nav="#slick-nav-1">
+                                    <!-- product -->
+                                    <div class="product">
+                                        <div class="product-img">
+                                            <a routerLink="/ecom/view/{{product._id}}">
+                                                <img [src]="sanitize('data:image/png;base64, ' + _arrayBufferToBase64(product.image.data.data))" style="height: 219px;width: 254px;"></a>
+                                            <div class="p.roduct-label">
+                                                <!-- <span class="sale">-30%</span> -->
+
+                                            </div>
+                                        </div>
+                                        <div class="product-body">
+                                            <p class="product-category">{{product.cat}}</p>
+                                            <h3 class="product-name"><a routerLink="/ecom/view">{{product.productname}}</a></h3>
+                                            <h4 class="product-price">{{product.price}} <del class="product-old-price">$990.00</del></h4>
+                                            <div class="product-rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="product-btns">
+                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                <!-- <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button> -->
+                                                <button class="quick-view"><a routerLink="/ecom/view/{{product._id}}"><i class="fa fa-eye"></i></a><span class="tooltipp">quick view</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="add-to-cart">
+                                            <button class="add-to-cart-btn" (click)="addCart(product._id)"><i class="fa fa-shopping-cart" ></i> add to cart</button>
+                                        </div>
+                                    </div>
+                                    <!-- /product -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
         </div>
-    </div>
 
-</div>
+    </div>

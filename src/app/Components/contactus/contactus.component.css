@@ -1,3 +1,44 @@
+/* .form input {
+    display: flex;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #eff2f6;
+    color: #454545;
+    height: 67px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.messages h3 {
+    margin-left: 2px;
+    font-size: 40px;
+    font-weight: 500;
+    color: #f1ebec;
+}
+
+.icon {
+    color: #fff;
+    margin-left: 20px;
+}
+
+.icon i,
+span {
+    font-size: 17px;
+}
+
+.icon p {
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+}
+
 .form input {
     display: flex;
     width: 100%;
@@ -35,11 +76,91 @@ span {
 }
 
 .btn {
-    background-image: linear-gradient(rgb(248, 0, 0), rgb(92, 10, 10));
+    background-color: #0672ff;
+    width: 200px;
+    height: 50px;
+} */
+
+.form input {
+    display: flex;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #eff2f6;
+    color: #454545;
+    height: 67px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.messages h3 {
+    margin-left: 2px;
+    font-size: 40px;
+    font-weight: 500;
+    color: #f1ebec;
+}
+
+.icon {
+    color: #fff;
+    margin-left: 20px;
+}
+
+.icon i,
+span {
+    font-size: 17px;
+}
+
+.icon p {
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+.btn {
+    background-color: #0672ff;
     width: 200px;
     height: 50px;
 }
 
-.map {
-    margin-left: 130px;
+.form input {
+    display: flex;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #eff2f6;
+    color: #454545;
+    height: 67px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.messages h3 {
+    margin-left: 2px;
+    font-size: 40px;
+    font-weight: 500;
+    color: #f1ebec;
+}
+
+.icon {
+    color: #fff;
+    margin-left: 20px;
+}
+
+.icon i,
+span {
+    font-size: 17px;
+}
+
+.icon p {
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+.btn {
+    background-color: #0672ff;
+    width: 200px;
+    height: 50px;
 }

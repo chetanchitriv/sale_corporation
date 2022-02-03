@@ -13,6 +13,7 @@ export class SidenavComponent implements OnInit {
   myaccount:boolean=true
   logout:boolean=false
   username:any;
+  term:any
 
   constructor(private cart:CartService , private ser:ProductService) { }
 
@@ -24,7 +25,7 @@ export class SidenavComponent implements OnInit {
     getcart(){
       this.cart.getcartitem().subscribe((res:any)=>{
         this.totalitem=res.product.length;
-        console.log(res )
+        // console.log(res )
     })
       
   }

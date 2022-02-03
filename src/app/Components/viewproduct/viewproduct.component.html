@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-md-6" style="border-right: 1px solid black;">
         <div class="product-img">
-            <img [src]="sanitize('data:image/png;base64, ' + _arrayBufferToBase64(currentproduct.image.data.data))" style="height: 314px;margin-left: 38px;margin-top: 138px;">
+            <img [src]="sanitize('data:image/png;base64, ' + _arrayBufferToBase64(currentproduct.image.data.data))" style="height: 314px;margin-left: 63px;width:83%;margin-top: 138px;">
             <div class="product-label">
                 <!-- <span class="sale">-30%</span> -->
                 <!-- <span class="new">NEW</span> -->
@@ -10,13 +10,13 @@
         </div>
     </div>
     <div class="col-md-6" style="padding-top: 60px;">
-        <div class="container mt-3">
+        <div class="container mt-3" style="width: 901px;">
             <h2>{{currentproduct.productname}}</h2>
             <table class="table table-hover" style="width: 60%;">
                 <thead>
 
                     <tr>
-                        <th>Product Name</th>
+                        <th>Product </th>
                         <th>{{currentproduct.productname}}</th>
 
                     </tr>
@@ -24,8 +24,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th>Description</th>
-                        <th> {{currentproduct.description}}</th>
+                        <td>Description</td>
+                        <td> {{currentproduct.description}}</td>
 
                     </tr>
                     <tr>
@@ -60,7 +60,7 @@
                         </th>
                         <th style="padding-left: 90px;">
                             <button (click)="pay()" class="btn bg-danger " style="background-color:#D10024 ; color: white;border-radius: 5px;"><b>Buy Now</b></button>
-                            <button class="btn bg-danger" style="background-color:#D10024 ; color: white;border-radius: 5px; margin-left: 10px;"><b>Add To Cart</b></button>
+                            <button (click)="addCart(currentproduct._id)" class="btn bg-danger" style="background-color:#D10024 ; color: white;border-radius: 5px; margin-left: 10px;"><b>Add To Cart</b></button>
                         </th>
                     </tr>
 

@@ -22,6 +22,7 @@ import { AuthGuard } from './Services/auth.guard';
 import { ViewusersComponent } from './Components/dashboard/viewusers/viewusers.component';
 import { EditproductComponent } from './Components/dashboard/editproduct/editproduct.component';
 import { EditproducthereComponent } from './Components/dashboard/editproducthere/editproducthere.component';
+import { ProfileComponent } from './Components/profile/profile.component';
 
 
 
@@ -36,17 +37,19 @@ const routes: Routes = [
 
     {path:"ecom",component:EcommerceComponent,
     children:[
-    { path: "deal", component: HotdealsComponent },
-    { path: "view/:id", component: ViewproductComponent },
-    { path: "cart", component: CartComponent },
-    { path: "footer", component: FooterComponent },
-    { path: "home", component: HomeComponent },
-    { path: "shop", component: ShopComponent },
-    { path: "sidenav", component: SidenavComponent },
-    { path: "contactus", component: ContactusComponent },
-    { path: "wishlist", component: WhishlistComponent },
-    { path: "about", component: AboutComponent },
+        { path: "deal", component: HotdealsComponent },
+        { path: "view/:id", component: ViewproductComponent },
+        { path: "cart", component: CartComponent },
+        { path: "footer", component: FooterComponent },
+        { path: "home", component: HomeComponent },
+        { path: "shop", component: ShopComponent },
+        { path: "sidenav", component: SidenavComponent },
+        { path: "contactus", component: ContactusComponent },
+        { path: "wishlist", component: WhishlistComponent },
+        { path: "about", component: AboutComponent },
+        { path: "profile", component: ProfileComponent },
     ]},
+          
     {path:"admin",component:AdminComponent},
     {path:"adminsell",component:AdminsellComponent},
     {path:"main",component:MainComponent,
@@ -65,3 +68,5 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 export class AppRoutingModule {}
+
+// canActivate:[AuthGuard],

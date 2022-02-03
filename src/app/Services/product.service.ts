@@ -31,7 +31,9 @@ export class ProductService {
   getcurerntproduct(id:any):Observable<any>{
     return this.http.get(this.apiUrl+`/api/addproduct/`+id)
   }
-
+  deletproduct(id:any):Observable<any>{
+  return this.http.delete(this.apiUrl+ `/api/addproduct/`+id,id )
+  }
 
 // login and signup start
 
@@ -79,5 +81,6 @@ getuser():Observable<any>{
   return this.http.get(this.apiUrl+ `/api/viewusers`)
   // .pipe(res)
 }
+
 
 }

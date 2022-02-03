@@ -9,6 +9,10 @@ import { ProductService } from 'src/app/Services/product.service';
 export class ViewusersComponent implements OnInit {
 
  viewuser:any
+ p: number = 1
+ selectInput:any
+ term=''
+ total:any
 
   constructor(private ser:ProductService) { }
 
@@ -17,9 +21,9 @@ export class ViewusersComponent implements OnInit {
     this.getuser()
   }
 getuser(){
-
   this.ser.getuser().subscribe((res:any)=>{
    this.viewuser=res
+   this.total=res.length
   })
 }
 }

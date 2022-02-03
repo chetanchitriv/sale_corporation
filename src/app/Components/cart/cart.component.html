@@ -17,11 +17,11 @@
                         <td>{{i+1}}</td>
 
 
-                        <td> <img [src]="sanitize('data:image/png;base64, ' + _arrayBufferToBase64(item.image.data.data))" style="height: 125;width: 130px;"></td>
+                        <td> <img [src]="sanitize('data:image/png;base64, ' + _arrayBufferToBase64(item.image.data.data))" style="height: 130px;width: 130px;"></td>
                         <td>{{item.productname}}</td>
-                        <td>Rs: {{item.price}}</td>
+                        <td> {{item.price}}</td>
                         <td>
-                            <select class="input-select">
+                            <!-- <select class="input-select" [(ngModel)]="selectInput" (click)="grandmaster()">
                                 <option value="1" >1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -33,7 +33,10 @@
                                 <option value="6">9</option>
                                 <option value="6">10</option>
                         
-                           </select>
+                           </select> -->
+
+                            <input id="pricein" type="number" name="price-min" id="price-min" value="1" min="0" max="1000" [(ngModel)]="selectInput">
+
                         </td>
 
 
@@ -48,19 +51,20 @@
                     <th></th>
 
                     <th></th>
-                    <th> <button class="btn  " style="background-color:#396f3c ; color: white;border-radius: 5px;margin-left: 10px;"><b>Proceed To Payement</b></button></th>
+                    <th> <button (click)="pay()" class="btn  " style="background-color:#396f3c ; color: white;border-radius: 5px;margin-left: 10px;"><b>Proceed To Payement</b></button></th>
 
-                    <th>Sub Total:{{grandTotal}}</th>
+                    <th>Sub Total:{{grandTotal*selectInput}}</th>
                 </thead>
             </table>
         </div>
     </div><br>
     <button (click)=" emptycart(obj.cartId)" class="add-to-cart-btn" style="margin-left: 80%;width: 130px; height: 40px;border-radius: 15px;background-color: #D10024;color: white ;"> <b>Clear Cart</b></button>
 
-
-
-
 </ng-container>
+
+
+
+
 <ng-container *ngIf="checkarray.length == 0">
     <div class="container ">
         <div class=>

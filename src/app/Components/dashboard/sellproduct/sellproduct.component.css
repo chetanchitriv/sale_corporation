@@ -1,6 +1,4 @@
-.i {
-    border: 2px solid #080808;
-    width: 38%;
-    margin-left: 50px;
-    border-radius: 10px
+#i {
+    border: 1px solid #070808;
+    border-radius: 15px;
 }
